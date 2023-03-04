@@ -1,9 +1,10 @@
-import { render } from './utils/render.js';
-import QuestionView from './view/question-view.js';
-import FormView from './view/form-view.js';
+import CalculatorPresenter from './presenter/calculator-presenter.js';
+import CalculatorModel from './model/calculator-model.js';
 
 const mainContainerElement = document.querySelector('.second-container');
+const calculatorModel = new CalculatorModel();
+const calculatorPresenter = new CalculatorPresenter(mainContainerElement, calculatorModel);
 
-render(new QuestionView(), mainContainerElement);
-render(new FormView(), mainContainerElement);
+calculatorPresenter.init();
+
 
