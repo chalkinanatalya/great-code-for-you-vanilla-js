@@ -3,57 +3,44 @@ import AbstractView from '../utils/view/abstract-view';
 const createOptionTemplate = (optionBlock) => (
   `<div class="group-answer radio">
     <label for="question" class="radiolabel">${optionBlock.option}</label>
-    <input type="radio" class="radiobutton" id=${optionBlock.id}>
+    <input type="radio" class="radiobutton" id=${optionBlock.id} name="radiobutton">
   </div>`
 );
 
-const createFormTemplate = (questions) => {
-  const {optionsBlock} = questions;
+const createFormTemplate = (question, currentQuestion, amount) => {
+  const {optionsBlock} = question;
   return (
     `<div class="cta-header-container">
       <form class="radio-group">
         ${optionsBlock.map((option) => createOptionTemplate(option))}
       </form>
-      <button class="button-next">Next</button>
+      <button class="button-next">${currentQuestion === amount - 1 ? 'Рассчитать' : 'Дальше'}</button>
   </div>`
   );
 };
 
 export default class FormView extends AbstractView {
-  #optionsBlock = null;
+  #questions = null;
+  #currentQuestion = null;
 
-  constructor(optionsBlock) {
+  constructor(questions, currentQuestion) {
     super();
-    this.#optionsBlock = optionsBlock;
+    this.#questions = questions;
+    this.#currentQuestion = currentQuestion;
   }
 
   get template() {
-    return createFormTemplate(this.#optionsBlock);
+    return createFormTemplate(this.#questions[this.#currentQuestion], this.#currentQuestion, this.#questions.length);
   }
 
   setButtonClickHandler = (callback) => {
-    const form = document.querySelector('form');
-    const data = new FormData(form);
     this._callback.buttonClick = callback;
-    this.element.querySelector('.button-next').addEventListener('click', () => {
-      this.#buttonClickHandler(data);
-    });
-  };
-
-  setOptionClickHandler = (callback) => {
-    this._callback.optionClick = callback;
-    this.element.querySelector('.question').addEventListener('click', this.#optionClickHandler);
-
+    this.element.querySelector('.button-next').addEventListener('click', this.#buttonClickHandler);
   };
 
   #buttonClickHandler = (evt) => {
+    const inputs = document.querySelectorAll('.radiobutton');
     evt.preventDefault();
-    this._callback.buttonClick();
+    this._callback.buttonClick(inputs, evt);
   };
-
-  #optionClickHandler = (evt) => {
-    evt.preventDefault();
-    this._callback.optionClick();
-  };
-
 }
