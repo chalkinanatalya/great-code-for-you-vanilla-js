@@ -1,7 +1,7 @@
 import {generateQuestion} from '../mock/question.js';
 
 export default class CalculatorModel {
-  #questions = Array.from({length: 5}, generateQuestion);
+  #questions = Array.from({length: 3}, generateQuestion);
   #answers = [];
 
   get questions() {

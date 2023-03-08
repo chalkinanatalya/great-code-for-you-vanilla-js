@@ -1,4 +1,4 @@
-import { render } from '../utils/render';
+import { render, remove } from '../utils/render';
 import FormView from '../view/form-view';
 import QuestionView from '../view/question-view';
 
@@ -34,21 +34,29 @@ export default class CalculatorPresenter {
   };
 
   #renderParagraph = (questions) => {
-    this.#paragraphComponent = new QuestionView(questions[0]);
+    this.#paragraphComponent = new QuestionView(questions[this.#currentQuestion]);
     render(this.#paragraphComponent, this.#containerPresenter);
   };
 
   #renderOptionsBlock = (questions) => {
-    this.#optionsBlockComponent = new FormView(questions[0]);
+    this.#optionsBlockComponent = new FormView(questions, this.#currentQuestion);
     render(this.#optionsBlockComponent, this.#containerPresenter);
     this.#setButtonHandler();
   };
 
   #setButtonHandler = () => {
-    this.#optionsBlockComponent.setButtonClickHandler((data) => {
-      this.#currentQuestion++;
-      console.log(data);
-      // this.#questionModel.answers(evt.target.value);
+    this.#optionsBlockComponent.setButtonClickHandler((inputs) => {
+      const checkedInput = Array.from(inputs).find((input) => input.checked === true);
+      this.#questionModel.answers = checkedInput.id;
+      //console.log(this.#currentQuestion);
+      //console.log('this.#questionModel.answers: ', this.#questionModel.answers);
+
+      if(this.#currentQuestion < this.#questionModel.questions.length - 1) {
+        this.#currentQuestion++;
+        remove(this.#paragraphComponent);
+        remove(this.#optionsBlockComponent);
+        this.init();
+      }
     });
   };
 }
