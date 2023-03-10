@@ -143,5 +143,5 @@ const generateOptions = () => {
 
 export const generateQuestion = () => ({
   paragraph: generateParagraph(),
-  optionsBlock: generateOptions()
+  options: generateOptions()
 });
