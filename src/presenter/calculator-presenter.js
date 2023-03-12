@@ -75,8 +75,8 @@ export default class CalculatorPresenter {
       } else {
         this.#questionModel.sendAnswers();
         //test TODO:
-        remove(this.#paragraphComponent);
-        remove(this.#optionsBlockComponent);
+        // remove(this.#paragraphComponent);
+        // remove(this.#optionsBlockComponent);
       }
     });
   };
