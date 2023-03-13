@@ -2,7 +2,7 @@ import AbstractView from '../utils/view/abstract-view';
 
 const createOptionTemplate = (option, type) => (
   `<div class="group-answer radio">
-    <label for="question" class="radiolabel">${option.option}</label>
+    <label for=${option.id} class="radiolabel">${option.option}</label>
     <input type="${type}" class="radiobutton" id=${option.id} name="radiobutton">
   </div>`
 );
@@ -14,7 +14,7 @@ const createFormTemplate = (question, currentQuestion, amount) => {
       <form class="radio-group">
         ${options.map((option) => createOptionTemplate(option, type))}
       </form>
-      <button class="button-next">${currentQuestion === amount - 1 ? 'Рассчитать' : 'Дальше'}</button>
+      <button class="button-next navigation">${currentQuestion === amount - 1 ? 'Рассчитать' : 'Дальше'}</button>
   </div>`
   );
 };
