@@ -3,7 +3,7 @@ import AbstractView from '../utils/view/abstract-view';
 const createOptionTemplate = (option, type) => (
   `<div class="group-answer radio">
     <label for=${option.id} class="radiolabel">${option.option}</label>
-    <input type="${type}" class="radiobutton" id=${option.id} name="radiobutton">
+    <input type="${type}" class="radiobutton" id=${option.id} name="radiobutton" value="${option.price}">
   </div>`
 );
 
@@ -12,7 +12,7 @@ const createFormTemplate = (question, currentQuestion, amount) => {
   return (
     `<div class="cta-header-container">
       <form class="radio-group">
-        ${options.map((option) => createOptionTemplate(option, type))}
+        ${options.map((option) => createOptionTemplate(option, type)).join('')}
       </form>
       <button class="button-next navigation">${currentQuestion === amount - 1 ? 'Рассчитать' : 'Дальше'}</button>
   </div>`
