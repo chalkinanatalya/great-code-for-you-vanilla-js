@@ -61,10 +61,13 @@ export default class CalculatorPresenter {
 
   #setButtonHandler = () => {
     this.#optionsBlockComponent.setButtonClickHandler((inputs) => {
-      const checkedInput = Array.from(inputs).filter((input) => input.checked).map((input) => input.id);
+      const checkedInputs = Array.from(inputs).filter((input) => input.checked);
+      const checkedInputsIds = checkedInputs.map((input) => input.id);
+      const checkedInputsValue = checkedInputs.map((input) => Number(input.value)).reduce((a, b) => a + b);
       this.#questionModel.answers = {
         'id': this.#questionModel.questions[this.#currentQuestion].id,
-        'options': checkedInput
+        'options': checkedInputsIds,
+        'price': checkedInputsValue,
       };
 
       if(this.#currentQuestion < this.#questionModel.questions.length - 1) {
@@ -74,7 +77,7 @@ export default class CalculatorPresenter {
         this.init();
       } else {
         this.#questionModel.sendAnswers();
-        //test TODO:
+        //test TODO: DO THE LAST FORM!!!!!
         // remove(this.#paragraphComponent);
         // remove(this.#optionsBlockComponent);
       }
