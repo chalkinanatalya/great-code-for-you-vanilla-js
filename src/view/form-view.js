@@ -8,15 +8,10 @@ const createOptionTemplate = (option, type) => (
 );
 
 const createDataQuestionTemplate = (price) => (
-  `<p>Примерная стоимость Вашего проекта: ${price}</p>
-  <div class="group-answer radio">
-    <label for="username" class="radiolabel">Введите Ваше имя:</label>
-    <input type="text" class="data" name="radiobutton" id="username">
-  </div>
-  <div class="group-answer radio">
-    <label for="mail" class="radiolabel">Введите Ваш Email:</label>
-    <input type="email" class="data" name="radiobutton" id="mail">
-  </div>
+  `<h4>Примерная стоимость Вашего проекта: ${price}</h4>
+  <input type="text" class="feedback-input data" name="radiobutton" id="username" placeholder="Имя">
+  <input type="email" class="feedback-input data" name="radiobutton" id="email" placeholder="Email">
+  <textarea class="feedback-input data" name="radiobutton" id="message" placeholder="Сообщение"></textarea>
   `
 );
 
@@ -24,11 +19,14 @@ const createFormTemplate = (question, currentQuestion, amount, price) => {
   const {options, type} = question;
   return (
     `<div class="cta-header-container">
-    ${currentQuestion <= amount? `<form class="radio-group">
-    ${currentQuestion === amount ? createDataQuestionTemplate(price) : options.map((option) => createOptionTemplate(option, type)).join('')}
-  </form>
-  <button class="button-next navigation">${currentQuestion === amount ? 'Отправить' : 'Дальше'}</button>` : '<p>Спасибо за Ваши ответы! Разработчик свяжется с Вами в ближайшее время.</p>'}
-  </div>`
+    ${currentQuestion <= amount ?
+      `<form class="radio-group">
+        ${currentQuestion === amount ? createDataQuestionTemplate(price) : options.map((option) => createOptionTemplate(option, type)).join('')}
+      </form>
+      <button class="button-next navigation">${currentQuestion === amount ? 'Отправить' : 'Дальше'}</button>` :
+      '<h1>Спасибо за Ваши ответы! Разработчик свяжется с Вами в ближайшее время.</h1><div class="circle"><div class="checkmark"></div></div>'
+    }
+    </div>`
   );
 };
 

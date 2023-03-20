@@ -2,7 +2,7 @@ import AbstractView from '../utils/view/abstract-view';
 
 const createNoQuestionsTemplate = () => (
   `<p class="calculator__no-questions">
-  <span class="loader"></span>
+    <span class="loader"></span>
   </p>`
 );
 
