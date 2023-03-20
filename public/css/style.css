@@ -137,6 +137,22 @@
   cursor: pointer;
 }
 
+.button-next:hover {
+  transition: ease-in-out 0.5;
+  transform:scale(1.05);
+  background-color: var(--button-primary-bg,#063d75)
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor:auto;
+  background-color: #063d75;
+}
+
+.disabled:hover {
+  transform:scale(1);
+}
+
 /* it takes one minute */
 
 span.minute {
@@ -203,6 +219,10 @@ span.minute {
 }
 
 .feedback-input:focus { border: 2px solid #4b4b4b; }
+
+.feedback-input:invalid {
+  box-shadow: 0 0 5px 1px #1C548D;
+}
 
 textarea {
   font-family: Helvetica, Arial, sans-serif;
