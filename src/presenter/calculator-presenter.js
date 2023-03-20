@@ -15,6 +15,7 @@ export default class CalculatorPresenter {
   #isLoading = true;
 
   #currentQuestion = 0;
+  #price = 0;
 
   constructor(containerPresenter, questionModel) {
     this.#containerPresenter = containerPresenter;
@@ -27,59 +28,62 @@ export default class CalculatorPresenter {
     this.#renderQuestion(this.#questionModel.questions);
   };
 
-  #renderLoading = () => {
-    render(this.#loadingComponent, this.#containerPresenter, RenderPosition.AFTERBEGIN);
-  };
-
   #renderQuestion = (questions) => {
     if (this.#isLoading) {
       this.#renderLoading();
       return;
     }
-    this.#renderParagraph(questions);
-    this.#renderOptionsBlock(questions);
-
-    // const onEscKeyDown = (evt) => {
-    //   if (evt.key === 'Escape' || evt.key === 'Esc') {
-    //     evt.preventDefault();
-    //     //TODO remove!
-    //     document.removeEventListener('keydown', onEscKeyDown);
-    //   }
-    // };
+    this.#renderParagraph(questions.length <= this.#currentQuestion ? [] : questions[this.#currentQuestion]);
+    this.#renderOptionsBlock(questions.length <= this.#currentQuestion ? [] : questions[this.#currentQuestion]);
   };
 
-  #renderParagraph = (questions) => {
-    this.#paragraphComponent = new QuestionView(questions[this.#currentQuestion]);
+  #renderLoading = () => {
+    render(this.#loadingComponent, this.#containerPresenter, RenderPosition.AFTERBEGIN);
+  };
+
+  #renderParagraph = (question) => {
+    this.#paragraphComponent = new QuestionView(question, this.#questionModel.questions.length < this.#currentQuestion ? 'result' : 'question');
     render(this.#paragraphComponent, this.#containerPresenter);
   };
 
-  #renderOptionsBlock = (questions) => {
-    this.#optionsBlockComponent = new FormView(questions, this.#currentQuestion);
+  #renderOptionsBlock = (question) => {
+    this.#optionsBlockComponent = new FormView(question, this.#currentQuestion, this.#questionModel.questions.length, this.#price);
     render(this.#optionsBlockComponent, this.#containerPresenter);
-    this.#setButtonHandler();
+    if (this.#currentQuestion <= this.#questionModel.questions.length) {
+      this.#setButtonHandler();
+    }
   };
 
   #setButtonHandler = () => {
     this.#optionsBlockComponent.setButtonClickHandler((inputs) => {
-      const checkedInputs = Array.from(inputs).filter((input) => input.checked);
-      const checkedInputsIds = checkedInputs.map((input) => input.id);
-      const checkedInputsValue = checkedInputs.map((input) => Number(input.value)).reduce((a, b) => a + b);
-      this.#questionModel.answers = {
-        'id': this.#questionModel.questions[this.#currentQuestion].id,
-        'options': checkedInputsIds,
-        'price': checkedInputsValue,
-      };
-
-      if(this.#currentQuestion < this.#questionModel.questions.length - 1) {
+      const inputsArray = Array.from(inputs);
+      if(this.#currentQuestion < this.#questionModel.questions.length) {
+        const checkedInputs = inputsArray.filter((input) => input.checked);
+        const checkedInputsIds = checkedInputs.map((input) => input.id);
+        const checkedInputsValue = checkedInputs.map((input) => Number(input.value)).reduce((a, b) => a + b);
+        this.#price += checkedInputsValue;
+        this.#questionModel.answers = {
+          'id': this.#questionModel.questions[this.#currentQuestion].id,
+          'options': checkedInputsIds,
+          'price': checkedInputsValue,
+        };
         this.#currentQuestion++;
         remove(this.#paragraphComponent);
         remove(this.#optionsBlockComponent);
         this.init();
       } else {
+        this.#questionModel.answers = {
+          'name': inputsArray.find((input) => input.id === 'username').value,
+          'email': inputsArray.find((input) => input.id === 'email').value,
+          'message': inputsArray.find((input) => input.id === 'message').value,
+          'final-price': this.#price,
+        };
         this.#questionModel.sendAnswers();
-        //test TODO: DO THE LAST FORM!!!!!
-        // remove(this.#paragraphComponent);
-        // remove(this.#optionsBlockComponent);
+
+        this.#currentQuestion++;
+        remove(this.#paragraphComponent);
+        remove(this.#optionsBlockComponent);
+        this.init();
       }
     });
   };
