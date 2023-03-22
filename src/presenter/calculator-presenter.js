@@ -50,7 +50,9 @@ export default class CalculatorPresenter {
     this.#optionsBlockComponent = new FormView(question, this.#currentQuestion, this.#questionModel.questions.length, this.#price);
     render(this.#optionsBlockComponent, this.#containerPresenter);
     if (this.#currentQuestion <= this.#questionModel.questions.length) {
+      this.#setEnabledHandler();
       this.#setButtonHandler();
+      this.#setDisabledHandler();
     }
   };
 
@@ -85,6 +87,39 @@ export default class CalculatorPresenter {
         remove(this.#optionsBlockComponent);
         this.init();
       }
+    });
+  };
+
+  #setEnabledHandler = () => {
+    this.#optionsBlockComponent.setInputLoadHandler((button, inputs) => {
+      let isChecked = false;
+      let isTexted = true;
+      Array.from(inputs).forEach((input) => {
+        if(input.classList.contains('feedback-input')) {
+          if(input.value === '') {
+            isTexted = false;
+          }
+          isChecked = true;
+        } else {
+          if(input.checked) {
+            isChecked = true;
+          }
+        }
+      });
+      if(isChecked && isTexted) {
+        button.removeAttribute('disabled', '');
+        button.classList.remove('disabled');
+      } else {
+        button.setAttribute('disabled', '');
+        button.classList.add('disabled');
+      }
+    });
+  };
+
+  #setDisabledHandler = () => {
+    this.#optionsBlockComponent.setDataLoadHandler((button) => {
+      button.setAttribute('disabled', '');
+      button.classList.add('disabled');
     });
   };
 
