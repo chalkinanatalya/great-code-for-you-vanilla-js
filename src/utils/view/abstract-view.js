@@ -1,5 +1,4 @@
 import {createElement} from '../render.js';
-import './abstract-view.css';
 
 export default class AbstractView {
   #element = null;
