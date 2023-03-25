@@ -1,5 +1,4 @@
 import { render, RenderPosition } from '../utils/render';
-//import MainContainerView from '../view/containers/main-container-view';
 import FeedbackView from '../view/feedback-view';
 
 export default class FeedbackPresenter {
