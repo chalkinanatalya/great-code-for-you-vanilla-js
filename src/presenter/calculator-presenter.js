@@ -1,8 +1,8 @@
 import { UpdateType } from '../const';
 import { render, remove, RenderPosition } from '../utils/render';
-import FormView from '../view/form-view';
-import LoadingView from '../view/loading-view';
-import QuestionView from '../view/question-view';
+import FormView from '../view/calc-form-view';
+import LoadingView from '../view/calc-loading-view';
+import QuestionView from '../view/calic-question-view';
 
 export default class CalculatorPresenter {
   #questionModel = null;
