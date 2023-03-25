@@ -5,9 +5,14 @@ const Method = {
   POST: 'POST',
 };
 
-export default class QuestionsApiService extends ApiService {
+export default class PortfolioApiService extends ApiService {
   get questions() {
     return this._load({url: 'questions'})
+      .then(ApiService.parseResponse);
+  }
+
+  get certificates() {
+    return this._load({url: 'certificates'})
       .then(ApiService.parseResponse);
   }
 

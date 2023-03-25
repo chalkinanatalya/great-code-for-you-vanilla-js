@@ -140,5 +140,22 @@
         }
       ]
     }
+  ],
+  "certificates": [
+    {
+      "id": "cer01",
+      "description": "cer01",
+      "url": "https://picsum.photos/640/360?random=1"
+    },
+    {
+      "id": "cer02",
+      "description": "cer02",
+      "url": "https://picsum.photos/640/360?random=2"
+    },
+    {
+      "id": "cer03",
+      "description": "cer03",
+      "url": "https://picsum.photos/640/360?random=3"
+    }
   ]
 }

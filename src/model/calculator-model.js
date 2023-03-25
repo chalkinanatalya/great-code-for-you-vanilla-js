@@ -2,13 +2,13 @@ import { UpdateType } from '../const';
 import Observable from '../utils/observable';
 
 export default class CalculatorModel extends Observable {
-  #questionsApiService = null;
+  #portfolioApiService = null;
   #questions = [];
   #answers = [];
 
-  constructor(questionsApiService) {
+  constructor(portfolioApiService) {
     super();
-    this.#questionsApiService = questionsApiService;
+    this.#portfolioApiService = portfolioApiService;
   }
 
   get questions() {
@@ -25,7 +25,7 @@ export default class CalculatorModel extends Observable {
 
   init = async () => {
     try {
-      this.#questions = await this.#questionsApiService.questions;
+      this.#questions = await this.#portfolioApiService.questions;
     } catch(err) {
       this.#questions = [];
     }
@@ -34,7 +34,7 @@ export default class CalculatorModel extends Observable {
 
   sendAnswers = async () => {
     try {
-      await this.#questionsApiService.sendAnswers(this.#answers);
+      await this.#portfolioApiService.sendAnswers(this.#answers);
     } catch(err) {
       throw new Error('Can\'t send answers');
     }
