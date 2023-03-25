@@ -430,7 +430,7 @@ span.minute {
     }
 }
 /* ---calculator---<> */
-
+/* ---feedback---<> */
 .feedback {
   display: flex;
   flex-direction: column;
@@ -438,7 +438,7 @@ span.minute {
   width: 100%; }
   .feedback .feedback-box {
     max-width: 430px; }
-
+/* ---feedback---<> */
 /*---- main----</> */
 /* ---footer---<> */
 footer {
