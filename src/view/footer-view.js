@@ -1,6 +1,6 @@
 import AbstractView from '../utils/view/abstract-view';
 
-const createFooterIconViewTemplate = () => (
+const createFooterViewTemplate = () => (
   `<div class="container footer-container hover-image-scale">
     <ul class="footer-icons">
       <li class="footer-icon">
@@ -86,8 +86,8 @@ const createFooterIconViewTemplate = () => (
 </div>`
 );
 
-export default class FooterIconView extends AbstractView {
+export default class FooterView extends AbstractView {
   get template () {
-    return createFooterIconViewTemplate();
+    return createFooterViewTemplate();
   }
 }
