@@ -6,7 +6,7 @@ const createQuestionTemplate = (question, message) => {
   if (message === 'result') {
     title = '';
   } else {
-    title = question.length === 0 ? '<p>Заполните форму ниже, чтобы разработчик мог с Вами связаться:</p>' : `<p>${paragraph}</p>`;
+    title = question.length === 0 ? '<p>Fill the form below so we can contact you:</p>' : `<p>${paragraph}</p>`;
   }
   return (
     `<div class="question">
