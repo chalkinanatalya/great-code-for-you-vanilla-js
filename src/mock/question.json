@@ -2,141 +2,183 @@
   "questions": [
     {
       "id": "1",
-      "paragraph": "Расскажите о своем проекте. Какой функционал должен быть у Вашего сайта:",
+      "paragraph": "What type of business is your site for?:",
       "type": "radio",
       "options": [
         {
           "id": "11",
-          "option": "лендинг",
-          "price": "10000"
+          "option": "Personal project",
+          "price": "1500"
         },
         {
           "id": "12",
-          "option": "портфолио",
-          "price": "15000"
+          "option": "Self-employed",
+          "price": "1500"
         },
         {
           "id": "13",
-          "option": "социальная сеть",
-          "price": "20000"
+          "option": "Small business (1-15 employees)",
+          "price": "2500"
         },
         {
           "id": "14",
-          "option": "блог",
-          "price": "30000"
+          "option": "Medium business (15-30 employees)",
+          "price": "3500"
         },
         {
           "id": "15",
-          "option": "интернет-магазин",
-          "price": "40000"
+          "option": "Large business (30+ employees)",
+          "price": "5000"
         }
       ]
     },
     {
       "id": "2",
-      "paragraph": "На какой стадии разработки находится ваш сайт?",
+      "paragraph": "I'd like my site go live",
       "type": "radio",
       "options": [
         {
           "id": "21",
-          "option": "сайта нет, все нужно делать с нуля",
-          "price": "50000"
+          "option": "ASAP",
+          "price": "20000"
         },
         {
           "id": "22",
-          "option": "есть макет, нужно сверстать и запрограммировать",
-          "price": "40000"
+          "option": "Within 1 month",
+          "price": "15000"
         },
         {
           "id": "23",
-          "option": "нужно только сверстать",
-          "price": "30000"
+          "option": "Within 3 month",
+          "price": "10000"
         },
         {
           "id": "24",
-          "option": "нужно только запрограммировать",
-          "price": "20000"
+          "option": "More than 3 month",
+          "price": "6000"
         }
       ]
     },
     {
       "id": "3",
-      "paragraph": "Под какие устройства вы планируете адаптировать сайт?",
+      "paragraph": "I need...",
       "type": "checkbox",
       "options": [
         {
           "id": "31",
-          "option": "мобильные",
-          "price": "30000"
+          "option": "multipages",
+          "price": "1000"
         },
         {
           "id": "32",
-          "option": "десктоп",
-          "price": "30000"
+          "option": "Responsive design",
+          "price": "3000"
         },
         {
           "id": "33",
-          "option": "планшет",
-          "price": "30000"
+          "option": "Database integration",
+          "price": "6000"
+        },
+        {
+          "id": "34",
+          "option": "E-commerce functionality",
+          "price": "5000"
+        },
+        {
+          "id": "35",
+          "option": "Interactive Multimedia",
+          "price": "2000"
         }
       ]
     },
     {
       "id": "4",
-      "paragraph": "Кроме текста и изображений что будет на вашем сайте?",
+      "paragraph": "Choose design & style you need",
       "type": "checkbox",
       "options": [
         {
           "id": "41",
-          "option": "слайдеры",
-          "price": "10000"
+          "option": "Design Concept/Wireframes",
+          "price": "60"
         },
         {
           "id": "42",
-          "option": "видео",
-          "price": "15000"
+          "option": "Website Design",
+          "price": "100"
         },
         {
           "id": "43",
-          "option": "аудио",
-          "price": "5000"
+          "option": "Banner Slider",
+          "price": "40"
         },
         {
           "id": "44",
-          "option": "анимации",
-          "price": "25000"
+          "option": "Image/Video Gallery",
+          "price": "20"
         },
         {
           "id": "45",
-          "option": "карты",
-          "price": "15000"
+          "option": "Buttons",
+          "price": "20"
         }
       ]
     },
     {
       "id": "5",
-      "paragraph": "Отметьте дополнительные опции, если они вам нужны.",
+      "paragraph": "What kind of content development you need",
       "type": "checkbox",
       "options": [
         {
           "id": "51",
-          "option": "мультиязычность",
-          "price": "25000"
+          "option": "Copywriting",
+          "price": "20"
         },
         {
           "id": "52",
-          "option": "форма обратной связи",
-          "price": "20000"
+          "option": "Article and Blog Posts",
+          "price": "20"
         },
         {
           "id": "53",
-          "option": "поделиться ссылкой в соцсети",
-          "price": "5000"
+          "option": "Product Descriptions",
+          "price": "25"
         },
         {
           "id": "54",
-          "option": "изменение темы (вида) пользователем",
-          "price": "10000"
+          "option": "Nothing",
+          "price": "0"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "paragraph": "Website add-ons",
+      "type": "checkbox",
+      "options": [
+        {
+          "id": "61",
+          "option": "Live chat",
+          "price": "100"
+        },
+        {
+          "id": "62",
+          "option": "Social Media (share / like / reviews)",
+          "price": "150"
+        },
+        {
+          "id": "63",
+          "option": "Image / Video galleries",
+          "price": "100"
+        },
+        {
+          "id": "64",
+          "option": "Forms / Lead generation",
+          "price": "150"
+        },
+        {
+          "id": "65",
+          "option": "Member login / Profiles",
+          "price": "400"
         }
       ]
     }

@@ -8,10 +8,10 @@ const createOptionTemplate = (option, type) => (
 );
 
 const createDataQuestionTemplate = (price) => (
-  `<h4>Примерная стоимость Вашего проекта: ${price}</h4>
-  <input type="text" class="feedback-input data" name="radiobutton" id="username" placeholder="Имя" required>
+  `<h4>Thanks! Your approximate price is ${price}$</h4>
+  <input type="text" class="feedback-input data" name="radiobutton" id="username" placeholder="First Name" required>
   <input type="email" class="feedback-input data" name="radiobutton" id="email" placeholder="Email" required>
-  <textarea class="feedback-input data" name="radiobutton" id="message" placeholder="Сообщение" required></textarea>
+  <textarea class="feedback-input data" name="radiobutton" id="message" placeholder="Message" required></textarea>
   `
 );
 
@@ -23,8 +23,8 @@ const createFormTemplate = (question, currentQuestion, amount, price) => {
       `<form class="radio-group">
         ${currentQuestion === amount ? createDataQuestionTemplate(price) : options.map((option) => createOptionTemplate(option, type)).join('')}
       </form>
-      <button class="disabled button-next navigation" disabled>${currentQuestion === amount ? 'Отправить' : 'Дальше'}</button>` :
-      '<h1>Спасибо за Ваши ответы! Разработчик свяжется с Вами в ближайшее время.</h1><div class="circle"><div class="checkmark"></div></div>'
+      <button class="disabled button-next navigation" disabled>${currentQuestion === amount ? 'Send' : 'Next'}</button>` :
+      '<h1>Thank you! We will contact you as soon as possible</h1><div class="circle"><div class="checkmark"></div></div>'
     }
     </div>`
   );
