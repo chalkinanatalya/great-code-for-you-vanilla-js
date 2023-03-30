@@ -135,16 +135,21 @@
         },
         {
           "id": "52",
-          "option": "Article and Blog Posts",
+          "option": "Articles",
           "price": "20"
         },
         {
           "id": "53",
-          "option": "Product Descriptions",
+          "option": "Blog Posts",
           "price": "25"
         },
         {
           "id": "54",
+          "option": "Product Descriptions",
+          "price": "25"
+        },
+        {
+          "id": "55",
           "option": "Nothing",
           "price": "0"
         }
