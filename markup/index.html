@@ -10,43 +10,101 @@
 </head>
 
 <body>
-  <section class="top-cta-container" data-eventcategory="top-cta">
-    <div class="dcta-title-container">
-      <p class="dcta-heading">Рассчитайте примерную стоимость Вашего сайта</p>
-      <p class="dcta-subheading">Пройдите короткий отпросник</p>
-    </div>
-    <div class="second-container">
-      <div class="question">
-        <p>Расскажите о своем проекте. Какой функционал должен быть у Вашего сайта:</p>
+  <section class="calculator">
+    <section class="top-cta-container" data-eventcategory="top-cta">
+      <div class="second-container">
+        <div class="question">
+          <p>What type of business is your site for?:</p>
+        </div>
+        <div class="cta-header-container">
+          <form class="radio-group">
+            <div class="group-answer radio">
+              <label for="option.id" class="radiolabel">Personal project</label>
+              <input type="radio" class="radiobutton data" id="option.id" name="radiobutton" value="option.price">
+            </div>
+            <div class="group-answer radio">
+              <label for="option.id" class="radiolabel">Self-employed</label>
+              <input type="radio" class="radiobutton data" id="option.id" name="radiobutton" value="option.price">
+            </div>
+            <div class="group-answer radio">
+              <label for="option.id" class="radiolabel">Small business (1-15 employees)</label>
+              <input type="radio" class="radiobutton data" id="option.id" name="radiobutton" value="option.price">
+            </div>
+            <div class="group-answer radio">
+              <label for="option.id" class="radiolabel">Medium business (15-30 employees)</label>
+              <input type="radio" class="radiobutton data" id="option.id" name="radiobutton" value="option.price">
+            </div>
+            <div class="group-answer radio">
+              <label for="option.id" class="radiolabel">Large business (30+ employees)</label>
+              <input type="radio" class="radiobutton data" id="option.id" name="radiobutton" value="option.price">
+            </div>
+          </form>
+          <button class="disabled button-next navigation" disabled>Next</button>
+        </div>
       </div>
-      <div class="cta-header-container">
-        <form class="radio-group">
-          <div class="group-answer radio">
-            <label for="question1" class="radiolabel">Лендинг</label>
-            <input type="radio" class="radiobutton">
-          </div>
-          <div class="group-answer radio">
-            <label for="question2" class="radiolabel">Портфолио</label>
-            <input type="radio" class="radiobutton">
-          </div>
-          <div class="group-answer radio">
-            <label for="question2" class="radiolabel">Социальная сеть</label>
-            <input type="radio" class="radiobutton">
-          </div>
-          <div class="group-answer radio">
-            <label for="question2" class="radiolabel">Блог</label>
-            <input type="radio" class="radiobutton">
-          </div>
-          <div class="group-answer radio">
-            <label for="question2" class="radiolabel">Интернет-магазин</label>
-            <input type="radio" class="radiobutton">
-          </div>
-        </form>
-      </div>
-    </div>
-    <span class="minute">Это займет всего минутку!</span>
+      <span class="minute">It Only Takes a Minute</span>
+    </section>
   </section>
-  <script src="./bundle.js"></script>
+  <br />
+
+  <section class="calculator">
+    <section class="top-cta-container" data-eventcategory="top-cta">
+      <div class="second-container">
+        <div class="question">
+          <p>What kind of content development you need:</p>
+        </div>
+        <div class="cta-header-container">
+          <form class="radio-group">
+            <div class="group-answer radio">
+              <label for="option.id" class="radiolabel">Copywriting</label>
+              <input type="checkbox" class="radiobutton data" id="option.id" name="radiobutton" value="option.price">
+            </div>
+            <div class="group-answer radio">
+              <label for="option.id" class="radiolabel">Articles</label>
+              <input type="checkbox" class="radiobutton data" id="option.id" name="radiobutton" value="option.price">
+            </div>
+            <div class="group-answer radio">
+              <label for="option.id" class="radiolabel">Blog Posts</label>
+              <input type="checkbox" class="radiobutton data" id="option.id" name="radiobutton" value="option.price">
+            </div>
+            <div class="group-answer radio">
+              <label for="option.id" class="radiolabel">Product Descriptions</label>
+              <input type="checkbox" class="radiobutton data" id="option.id" name="radiobutton" value="option.price">
+            </div>
+            <div class="group-answer radio">
+              <label for="option.id" class="radiolabel">Nothing</label>
+              <input type="checkbox" class="radiobutton data" id="option.id" name="radiobutton" value="option.price">
+            </div>
+          </form>
+          <button class="button-next navigation" disabled>Next</button>
+        </div>
+      </div>
+      <span class="minute">It Only Takes a Minute</span>
+    </section>
+  </section>
+  <br />
+  <section class="calculator">
+    <section class="top-cta-container" data-eventcategory="top-cta">
+      <div class="second-container">
+        <div class="question">
+          <p>Fill the form below so we can contact you:</p>
+        </div>
+        <div class="cta-header-container">
+          <form class="radio-group">
+            <h4>Thanks! Your approximate price is 13420$</h4>
+            <input type="text" class="feedback-input data" name="radiobutton" id="username" placeholder="First Name"
+              required="">
+            <input type="email" class="feedback-input data" name="radiobutton" id="email" placeholder="Email"
+              required="">
+            <textarea class="feedback-input data" name="radiobutton" id="message" placeholder="Message"
+              required=""></textarea>
+          </form>
+          <button class="disabled button-next navigation" disabled="">Send</button>
+        </div>
+      </div>
+      <span class="minute">It Only Takes a Minute</span>
+    </section>
+  </section>
 </body>
 
 </html>
