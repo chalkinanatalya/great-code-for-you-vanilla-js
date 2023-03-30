@@ -77,7 +77,7 @@ video {
 }
 
 @media (min-width: 1200px) {
-    .quality- {
+    .quality {
         max-width: 1140px;
     }
 }
