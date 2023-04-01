@@ -1,0 +1,145 @@
+.developers {
+    justify-items: center;
+    align-items: center;
+    background-color: #0e0e0e;
+    /* min-height: 550px;  */
+}
+
+.developers-slider-container {
+  display: grid;
+  position: relative;
+  max-width: 1200px;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slider-slide {
+  flex: 0 0 100%;
+  height: 500px;
+}
+
+.slider-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --slider-prev--*/
+.slider-prev {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 45%;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+}
+.slider-prev:before,
+.slider-prev:after {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-top: 10px solid #0e0e0e;
+  border-left: 10px solid #0e0e0e;
+  animation: slider-prev 3s linear infinite reverse;
+}
+.slider-prev:after {
+  animation: slider-prev 3s linear infinite reverse -1.5s;
+}
+@keyframes slider-prev {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, 0) rotate(-45deg);
+  }
+  10%,
+  90% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(-45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(30px, 0) rotate(-45deg);
+  }
+}
+/* --slider-prev--*/
+
+/* --slider-next-- */
+.slider-next {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 45%;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+}
+.slider-next:before,
+.slider-next:after {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-right: 10px solid #0e0e0e;
+  border-bottom: 10px solid #0e0e0e;
+  animation: slider-next 3s linear infinite;
+}
+.slider-next:after {
+  animation: slider-next 3s linear infinite -1.5s;
+}
+@keyframes slider-next {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, 0) rotate(-45deg);
+  }
+  10%,
+  90% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(-45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(30px, 0) rotate(-45deg);
+  }
+}
+/* --slider-next-- */
+
+.slider-prev {
+  left: 0;
+}
+
+.slider-next {
+  right: 0;
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: #bbb;
+  cursor: pointer;
+}
+
+.slider-dot.active {
+  background-color: #333;
+}
