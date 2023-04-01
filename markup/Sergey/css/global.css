@@ -1,5 +1,6 @@
 body {
     max-width: 2000px;
+    overflow-x:hidden;
 }
 
 .container {

@@ -1,22 +1,29 @@
 .feedback {
+    display: flex;
+    flex-direction: column;
     margin-top: 20em;
-    padding-bottom: 10em;
+    margin-bottom: 10em;
     background-color: #0e0e0e;
     border-bottom: 1px solid #2a2a2a;
     font: 15px/1.7 'Plain', sans-serif;
+    height: 728px;
 }
 
 .feedback-inner {
     display: flex;
+    flex-direction: row;
     max-width: 1200px;
+    flex-wrap: wrap;
+    width: 100%;
     margin: 0 auto;
 }
 
 .feedback-content {
-    box-sizing: border-box;
-    width: 50%;
+    position: relative;
+    flex: 1 0 0;
     padding: 6em 10em 3em 0;
     color: #8d8d8d;
+    z-index: 1;
 }
 
 .feedback-content h2 {
@@ -62,11 +69,13 @@
 
 .feedback-media {
     position: relative;
+    flex: 1 0 0;
+    top: -7em;
 }
 
 .feedback-media-inner {
-    position: absolute;
-    top: -7em;
+  position: relative;
+    flex: 1 0 0;
 }
 
 .feedback-media img {
@@ -75,7 +84,19 @@
 
 .phone {
     position: relative;
+    z-index: 3;
+}
+.phone-cat {
+    position: relative;
+    top: -800px;
+    left: 65px;
     z-index: 2;
+}
+
+.phone-cat img {
+  width: 400px;
+  height: 794px;
+  border-radius: 10px 10px 0 0;
 }
 
 .screen {
@@ -87,4 +108,10 @@
     width: 400px;
     height: 792px;
     z-index: 1;
+}
+
+.feedback-bottom {
+  position: relative;
+  top: -1708px;
+  left: -100px;
 }
