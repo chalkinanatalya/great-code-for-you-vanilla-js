@@ -1,17 +1,33 @@
-.text {
-    align-items: center;
-    text-align: center;
-    height: 500px;
+.greeting {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-image: url("../img/greeting.png");
+  background-position: right;
+  background-repeat: no-repeat;
 }
+
+.text {
+    /*align-items: center;
+    text-align: center;*/
+    height: 500px;
+    font-family: 'Plain', sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-left: 8em;
+}
+
 
 .what {
     margin-top: 150px;
-    font-size: 50px;
+    font-size: 70px;
     text-align: center;
 }
 
 .creative {
-    font-size: 30px;
+    font-size: 50px;
 }
 
 /* ---competencies---<> */
@@ -25,7 +41,7 @@
 }
 
 .competencies-title {
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
   margin-top: 50px;
 }
 
