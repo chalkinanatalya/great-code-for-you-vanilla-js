@@ -4,13 +4,9 @@ const createFeedbackViewTemplate = () => (
   `<section class="container feedback">
     <div class="feedback-inner">
       <div class="feedback-content">
-        <h2><span class="lighter">Is your site ready</span><br>for advertising?</h2>
-        <p>It can be beautiful and not very, expensive or budget, on Tilda Publishing or 1C-Bitrix - all this is
-          not so important.
-          In order for applications to come, the site must sell cool. Let's check with our marketing
-          specialist i
-          on
-          zoom.</p>
+        <h2><span class="lighter">Are you ready</span><br>for a step further?</h2>
+        <p>We aim to create unique and personalized websites that accurately meet the needs and goals of each client. Contact us today to discuss your needs and receive a free consultation. We are confident that we can offer you the best solution for your business in the online world.
+        Please leave your contact information below, and we will get back to you soon. Thank you for considering us!</p>
         <form action="#" class="feedback-form">
           <input type="text" class="form-field" id="field-name" placeholder="Your name">
           <input type="phone" class="form-field" id="field-phone" placeholder="Your phone">
