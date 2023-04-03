@@ -1,0 +1,30 @@
+.greeting {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-image: url("../img/greeting.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+.text {
+    /*align-items: center;
+    text-align: center;*/
+    height: 700px;
+    font-family: 'Plain', sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-left: 8em;
+}
+
+.what {
+    font-size: 70px;
+    text-align: center;
+}
+
+.creative {
+    font-size: 50px;
+}

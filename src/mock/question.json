@@ -190,19 +190,24 @@
   ],
   "certificates": [
     {
-      "id": "cer01",
-      "description": "cer01",
-      "url": "https://picsum.photos/640/360?random=1"
+      "id": "dev01",
+      "description": "natalia",
+      "url": "./img/natalia.jpg"
     },
     {
-      "id": "cer02",
-      "description": "cer02",
-      "url": "https://picsum.photos/640/360?random=2"
+      "id": "dev02",
+      "description": "artem1",
+      "url": "./img/artem1.jpg"
     },
     {
-      "id": "cer03",
-      "description": "cer03",
-      "url": "https://picsum.photos/640/360?random=3"
+      "id": "dev03",
+      "description": "sergey",
+      "url": "./img/sergey.jpg"
+    },
+    {
+      "id": "dev04",
+      "description": "artem2",
+      "url": "./img/artem2.jpg"
     }
   ]
 }

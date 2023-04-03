@@ -15,6 +15,6 @@ export default class CompetencePresenter {
   };
 
   #renderCompetence = () => {
-    render(this.#competenceComponent, this.#mainBoxContainer, RenderPosition.BEFOREEND);
+    render(this.#competenceComponent, this.#mainBoxContainer, RenderPosition.AFTERBEGIN);
   };
 }

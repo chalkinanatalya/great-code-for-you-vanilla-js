@@ -1,0 +1,99 @@
+/* @import url(./fonts.css); */
+
+.header-container {
+    min-height: 200px;
+    background: #0e0e0e;
+    grid-template-columns: repeat(1fr, minmax(200px, 1fr));
+    grid-auto-flow: column;
+    grid-gap: 1rem;
+}
+
+.heading {
+    font-family: 'Marck Script';
+    color: white;
+    align-items: center;
+    margin-left: 10%;
+}
+
+/* анимация heading */
+
+.header-logo {
+    animation-duration: 2s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+.icon-vk {
+    animation-duration: 1s;
+    animation-name: slidein-icons;
+}
+
+@keyframes slidein-icons {
+    from {
+        margin-left: 600%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+.icon-whatsapp {
+    animation-duration: 2s;
+    animation-name: slidein-icons;
+}
+
+@keyframes slidein-icons {
+    from {
+        margin-left: 400%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+.icon-telegram {
+    animation-duration: 2.5s;
+    animation-name: slidein-icons;
+}
+
+@keyframes slidein-icons {
+    from {
+        margin-left: 300%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+
+/*-- анимация heading -- */
+
+.header-icons {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: column;
+    justify-items: end;
+    align-items: center;
+    grid-gap: 1.5rem;
+    margin-right: 10%;
+}
