@@ -1,4 +1,4 @@
-import { render } from '../utils/render';
+import { RenderPosition, render } from '../utils/render';
 import HeaderView from '../view/header-view';
 
 export default class HeaderPresenter {
@@ -14,6 +14,6 @@ export default class HeaderPresenter {
   };
 
   #renderHeader = () => {
-    render(this.#headerComponent, this.#bodyContainer);
+    render(this.#headerComponent, this.#bodyContainer, RenderPosition.AFTERBEGIN);
   };
 }

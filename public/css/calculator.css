@@ -12,7 +12,12 @@
 }
 
 .calculator p {
-  font-size: 30px;
+  font-size: 2em;
+}
+
+.question {
+  padding-left: 30px;
+  margin: 0.5em 0;
 }
 
 .calculator-description {
@@ -37,7 +42,7 @@
 }
 
 .calculator-description p {
-  font-size: 15px;
+  font-size: 1em;
 }
 
 .second-container {
