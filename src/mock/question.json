@@ -209,5 +209,13 @@
       "description": "artem2",
       "url": "./img/artem2.jpg"
     }
+  ],
+  "feedback": [
+    [
+      {
+        "name": "fff",
+        "phone": "fff"
+      }
+    ]
   ]
 }
