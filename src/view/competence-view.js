@@ -3,8 +3,8 @@ import AbstractView from '../utils/view/abstract-view';
 const createCompitenceViewTemplate = () => (
   `<section class="container competencies">
     <div class="competencies-content">
-      <h2>Our competencies</h2>
-      <p>There are various development platforms available for an array of solutions out there, and sometimes the options can be overwhelming. The technologies we use have been chosen based on what we have recognized as more powerful in terms of compatibility, scalability, performance, ease of use, and most importantly, cost effectiveness.</p>
+      <h2 class="animate__animated wow animate__bounceInLeft">Our competencies</h2>
+      <p class="animate__animated wow animate__bounceInLeft" >There are various development platforms available for an array of solutions out there, and sometimes the options can be overwhelming. The technologies we use have been chosen based on what we have recognized as more powerful in terms of compatibility, scalability, performance, ease of use, and most importantly, cost effectiveness.</p>
     </div>
     <div class="competencies-media">
       <ul class="competencies-icons">
