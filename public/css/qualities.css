@@ -1,9 +1,16 @@
 .qualities {
   padding: 3em 0;
-  background: linear-gradient(180deg, #0e0e0e, white);
-  animation: gradient 5s linear infinite alternate;
+  background-color: #0e0e0e;
+  transition-property: background-color;
+  transition: background-color 0.3s, transform 0.2s;
   color: #000;
   font: 15px/1.7 'Plain', sans-serif;
+}
+
+.qualities.animation-class {
+  background-color: white;
+  transition-timing-function: ease-out;
+  transition: background-color 1.5s, transform 0.2s;
 }
 
 .quality-inner {
