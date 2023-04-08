@@ -1,6 +1,7 @@
 .qualities {
   padding: 3em 0;
-  background-color: #0e0e0e;
+  background: linear-gradient(180deg, #0e0e0e, white);
+  animation: gradient 5s linear infinite alternate;
   color: #000;
   font: 15px/1.7 'Plain', sans-serif;
 }
