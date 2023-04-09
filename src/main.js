@@ -12,8 +12,7 @@ import DeveloperModel from './model/developer-model.js';
 import FeedbackModel from './model/feedback-model.js';
 
 const AUTHORIZATION = 'testtoken1234567890';
-const END_POINT = 'http://localhost:3000';
-
+const END_POINT = 'http://localhost:3024';
 
 const mainContainerElement = document.querySelector('body');
 const mainCalculatorElement = document.querySelector('.second-container');

@@ -4,31 +4,31 @@ import LoadingView from '../view/calc-loading-view';
 import DeveloperView from '../view/developer-view';
 export default class DeveloperPresenter {
   #mainBoxContainer = null;
-  #certificateModel = null;
-  #certificateComponent = null;
+  #developerModel = null;
+  #developerComponent = null;
 
   #loadingComponent = new LoadingView();
   #isLoading = true;
 
-  constructor(mainBoxContainer, certificateModel) {
+  constructor(mainBoxContainer, developerModel) {
     this.#mainBoxContainer = mainBoxContainer;
-    this.#certificateModel = certificateModel;
+    this.#developerModel = developerModel;
 
-    this.#certificateModel.addObserver(this.#handleModelEvent);
+    this.#developerModel.addObserver(this.#handleModelEvent);
   }
 
   init = () => {
-    this.#renderCertificate();
+    this.#renderDeveloper();
   };
 
-  #renderCertificate = () => {
+  #renderDeveloper = () => {
     if (this.#isLoading) {
       this.#renderLoading();
       return;
     }
 
-    this.#certificateComponent = new DeveloperView(this.#certificateModel.certificates);
-    render(this.#certificateComponent, this.#mainBoxContainer, RenderPosition.AFTERBEGIN);
+    this.#developerComponent = new DeveloperView(this.#developerModel.developers);
+    render(this.#developerComponent, this.#mainBoxContainer, RenderPosition.AFTERBEGIN);
     this.#setSliderHandler();
   };
 
@@ -40,7 +40,7 @@ export default class DeveloperPresenter {
     if(UpdateType.INIT === updateType) {
       this.#isLoading = false;
       remove(this.#loadingComponent);
-      this.#renderCertificate(this.#certificateModel.questions);
+      this.#renderDeveloper(this.#developerModel.questions);
     }
   };
 
@@ -60,7 +60,7 @@ export default class DeveloperPresenter {
   };
 
   #setSliderHandler = () => {
-    this.#certificateComponent.setButtonDotsClickHandler((sliderTrack, sliderDots, index) => {
+    this.#developerComponent.setButtonDotsClickHandler((sliderTrack, sliderDots, index) => {
       this.#goToSlide(sliderTrack, sliderDots, index);
     });
   };

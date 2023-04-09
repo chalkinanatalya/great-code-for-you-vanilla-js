@@ -3,7 +3,7 @@ import AbstractView from '../utils/view/abstract-view';
 const createOptionTemplate = (option, type) => (
   `<div class="group-answer radio">
     <label for=${option.id} class="radiolabel">${option.option}</label>
-    <input type="${type}" class="radiobutton data" id=${option.id} name="radiobutton" value="${option.price}">
+    <input type="${type}" class="radiobutton data" id=${option.id} name="radiobutton" value="${option.price}" title="${option.option}">
   </div>`
 );
 

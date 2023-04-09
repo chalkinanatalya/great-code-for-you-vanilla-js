@@ -11,21 +11,20 @@ export default class PortfolioApiService extends ApiService {
       .then(ApiService.parseResponse);
   }
 
-  get certificates() {
-    return this._load({url: 'certificates'})
+  get developers() {
+    return this._load({url: 'developers'})
       .then(ApiService.parseResponse);
   }
 
   sendAnswers = async (answers) => {
     const response = await this._load({
-      url: 'answers',
+      url: 'questionnaire',
       method: Method.POST,
       body: JSON.stringify(answers),
       headers: new Headers({'Content-Type': 'application/json'}),
     });
 
-    const parsedResponse = await ApiService.parseResponse(response);
-
+    const parsedResponse = await response.text();
     return parsedResponse;
   };
 
@@ -37,8 +36,7 @@ export default class PortfolioApiService extends ApiService {
       headers: new Headers({'Content-Type': 'application/json'}),
     });
 
-    const parsedResponse = await ApiService.parseResponse(response);
-
+    const parsedResponse = await response.text();
     return parsedResponse;
   };
 }

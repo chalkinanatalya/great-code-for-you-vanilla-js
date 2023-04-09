@@ -1,10 +1,10 @@
 import AbstractView from '../utils/view/abstract-view';
 
-const createSlideTemplate = (certificate) => {
-  const {description, url} = certificate;
+const createSlideTemplate = (developer) => {
+  const {description, fileName} = developer;
   return (
     `<div class="slider-slide">
-      <img src="${url}" alt="${description}">
+      <img src="./img/developers/${fileName}" alt="${description}">
     </div>`
   );
 };
@@ -21,25 +21,25 @@ const createDotTemplate = (length) =>{
   );
 };
 
-const createCertificateViewTemplate = (certificates) => (
+const createDeveloperViewTemplate = (developers) => (
   `<div class="developers-slider-container">
         <div class="slider-track">
-          ${certificates.map((certificate) => createSlideTemplate(certificate)).join('')}
+          ${developers.map((developer) => createSlideTemplate(developer)).join('')}
         </div>
-        ${createDotTemplate(certificates.length)}
+        ${createDotTemplate(developers.length)}
       </div>`
 );
 
 export default class DeveloperView extends AbstractView {
-  #certificates = [];
+  #developers = [];
 
-  constructor(certificates) {
+  constructor(developers) {
     super();
-    this.#certificates = certificates;
+    this.#developers = developers;
   }
 
   get template () {
-    return createCertificateViewTemplate(this.#certificates);
+    return createDeveloperViewTemplate(this.#developers);
   }
 
   setButtonDotsClickHandler = (callback) => {

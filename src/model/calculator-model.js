@@ -5,6 +5,7 @@ export default class CalculatorModel extends Observable {
   #portfolioApiService = null;
   #questions = [];
   #answers = [];
+  #client = null;
 
   constructor(portfolioApiService) {
     super();
@@ -19,8 +20,16 @@ export default class CalculatorModel extends Observable {
     return this.#answers;
   }
 
+  get client() {
+    return this.#client;
+  }
+
   set answers(answer) {
     this.#answers.push(answer);
+  }
+
+  set client(client) {
+    this.#client = client;
   }
 
   init = async () => {
@@ -34,7 +43,8 @@ export default class CalculatorModel extends Observable {
 
   sendAnswers = async () => {
     try {
-      await this.#portfolioApiService.sendAnswers(this.#answers);
+      const request = [{'client': this.#client, 'answers': this.#answers}];
+      await this.#portfolioApiService.sendAnswers(request);
     } catch(err) {
       throw new Error('Can\'t send answers');
     }

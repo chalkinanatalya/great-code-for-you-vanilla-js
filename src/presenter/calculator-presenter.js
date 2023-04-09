@@ -61,12 +61,11 @@ export default class CalculatorPresenter {
       const inputsArray = Array.from(inputs);
       if(this.#currentQuestion < this.#questionModel.questions.length) {
         const checkedInputs = inputsArray.filter((input) => input.checked);
-        const checkedInputsIds = checkedInputs.map((input) => input.id);
+        const checkedInputsTitle = checkedInputs.map((input) => input.title);
         const checkedInputsValue = checkedInputs.map((input) => Number(input.value)).reduce((a, b) => a + b);
         this.#price += checkedInputsValue;
         this.#questionModel.answers = {
-          'id': this.#questionModel.questions[this.#currentQuestion].id,
-          'options': checkedInputsIds,
+          'options': checkedInputsTitle,
           'price': checkedInputsValue,
         };
         this.#currentQuestion++;
@@ -74,7 +73,7 @@ export default class CalculatorPresenter {
         remove(this.#optionsBlockComponent);
         this.init();
       } else {
-        this.#questionModel.answers = {
+        this.#questionModel.client = {
           'name': inputsArray.find((input) => input.id === 'username').value,
           'email': inputsArray.find((input) => input.id === 'email').value,
           'message': inputsArray.find((input) => input.id === 'message').value,
