@@ -24,9 +24,9 @@ async function getData(url) {
   return data;
 }
 
-// номер порта, на котором будет запущен сервер
+// port number to load the server
 const PORT = process.env.PORT || 3024;
-// префикс URI для всех методов приложения
+// prefix URI for all the methods in app
 const URI_PREFIX = '/';
 
 class ApiError extends Error {
@@ -37,25 +37,25 @@ class ApiError extends Error {
   }
 }
 
-// создаём HTTP сервер, переданная функция будет реагировать на все запросы к нему
+// creates HHP server, the function you've passed will react to all requests
 module.exports = server = createServer(async (req, res) => {
-  // этот заголовок ответа указывает, что тело ответа будет в JSON формате
+  // this header shows that the request body is going to have json format
   res.setHeader('Content-Type', 'application/json');
 
-  // CORS заголовки ответа для поддержки кросс-доменных запросов из браузера
+  // CORS headers for answers for cross-domain browser requests support
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
-  // запрос с методом OPTIONS может отправлять браузер автоматически для проверки CORS заголовков
-  // в этом случае достаточно ответить с пустым телом и этими заголовками
+  // request that contains method OPTION can be sent by browser automatically for CORS headers check
+  // in this case it's enouth to answer with empty body and headers
   if (req.method === 'OPTIONS') {
-    // end = закончить формировать ответ и отправить его клиенту
+    // end = to end forming answer and send it to client
     res.end();
     return;
   }
 
-  // если URI не начинается с нужного префикса - можем сразу отдать 404
+  // if URL doesn't start with demanded prefix - we're giving back a 404 err
   if (!req.url || !req.url.startsWith(URI_PREFIX)) {
     res.statusCode = 404;
     res.end(JSON.stringify({ message: 'Not Found' }));
@@ -111,7 +111,7 @@ module.exports = server = createServer(async (req, res) => {
     }
   }
 })
-  // выводим инструкцию, как только сервер запустился...
+  // As server has started to work, show the instruction
   .on('listening', () => {
     if (process.env.NODE_ENV !== 'test') {
       console.log(
