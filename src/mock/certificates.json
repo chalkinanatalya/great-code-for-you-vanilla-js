@@ -1,24 +1,22 @@
-{
-  "certificates": [
+[
     {
       "id": "dev01",
-      "description": "dev01",
-      "url": "https://picsum.photos/640/360?random=1"
+      "description": "natalia",
+      "url": "./img/natalia.jpg"
     },
     {
       "id": "dev02",
-      "description": "dev02",
-      "url": "https://picsum.photos/640/360?random=2"
+      "description": "artem1",
+      "url": "./img/artem1.jpg"
     },
     {
       "id": "dev03",
-      "description": "dev03",
-      "url": "https://picsum.photos/640/360?random=3"
+      "description": "sergey",
+      "url": "./img/sergey.jpg"
     },
     {
       "id": "dev04",
-      "description": "dev04",
-      "url": "https://picsum.photos/640/360?random=4"
+      "description": "artem2",
+      "url": "./img/artem2.jpg"
     }
   ]
-}

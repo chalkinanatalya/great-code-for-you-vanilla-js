@@ -3,22 +3,22 @@ import Observable from '../utils/observable';
 
 export default class DeveloperModel extends Observable {
   #portfolioApiService = null;
-  #certificates = [];
+  #developers = [];
 
   constructor(portfolioApiService) {
     super();
     this.#portfolioApiService = portfolioApiService;
   }
 
-  get certificates() {
-    return this.#certificates;
+  get developers() {
+    return this.#developers;
   }
 
   init = async () => {
     try {
-      this.#certificates = await this.#portfolioApiService.certificates;
+      this.#developers = await this.#portfolioApiService.developers;
     } catch(err) {
-      this.#certificates = [];
+      this.#developers = [];
     }
     this._notify(UpdateType.INIT);
   };
