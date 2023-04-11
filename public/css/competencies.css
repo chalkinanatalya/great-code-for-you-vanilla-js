@@ -13,6 +13,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
+
+    min-width: 38%;
 }
 
 .competencies-content h2 {

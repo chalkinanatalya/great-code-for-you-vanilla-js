@@ -1,0 +1,59 @@
+/* ---header---<> */
+
+/* ---header---<> */
+
+
+/* ---greeting---<> */
+@media (max-width: 1250px) {
+    .greeting {
+        background-size: auto 70%;
+    } 
+
+    }
+/* ---greeting---<> */
+
+/* ---qualities---<> */
+
+/* ---qualities---<> */
+
+/* ---competencies---<> */
+@media (max-width: 1250px) {
+    .competencies {
+      display: block;
+      padding: 5%;
+    } 
+    .competencies-content {
+        padding-bottom: 50px;
+    }
+    }
+/* ---competencies---<> */
+
+/* ---developers---<> */
+/* ---developers---<> */
+
+/* ---calculator---<> */
+/* ---calculator---<> */
+
+/* ---feedback---<> */
+@media (max-width: 1250px) {
+    .feedback-inner {
+      display: block;
+    } 
+    .feedback-content {
+        padding: 5%;
+    }
+    .feedback-media {
+        display: none;
+    }
+    .feedback-bottom {
+        display: none;
+    }
+    .feedback {
+        margin-bottom: 0.1em;
+    }
+    }
+/* ---feedback---<> */
+
+/* ---footer---<> */
+
+/* ---footer---<> */
