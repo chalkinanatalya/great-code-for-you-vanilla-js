@@ -1,5 +1,10 @@
 /* ---header---<> */
-
+@media (max-width: 1250px) {
+  .header-icon, svg {
+    width: 35px;
+    height: 35px;
+  }
+}
 /* ---header---<> */
 
 
@@ -7,13 +12,17 @@
 @media (max-width: 1250px) {
     .greeting {
         background-size: auto 70%;
-    } 
+    }
 
     }
 /* ---greeting---<> */
 
 /* ---qualities---<> */
-
+@media (max-width: 1250px) {
+  .quality-header, h2 {
+    font-size: clamp(0.65rem, 0.4rem + 0.5vw, 1rem);
+  }
+}
 /* ---qualities---<> */
 
 /* ---competencies---<> */
@@ -21,7 +30,7 @@
     .competencies {
       display: block;
       padding: 5%;
-    } 
+    }
     .competencies-content {
         padding-bottom: 50px;
     }
@@ -38,7 +47,7 @@
 @media (max-width: 1250px) {
     .feedback-inner {
       display: block;
-    } 
+    }
     .feedback-content {
         padding: 5%;
     }
@@ -55,5 +64,4 @@
 /* ---feedback---<> */
 
 /* ---footer---<> */
-
 /* ---footer---<> */

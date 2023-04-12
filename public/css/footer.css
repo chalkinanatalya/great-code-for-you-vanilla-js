@@ -4,7 +4,7 @@
     background: #0e0e0e;
     grid-auto-flow: column;
     color: white;
-    font-size: clamp(1rem, 1.5rem, 2rem);
+    font-size: clamp(0.5rem, 0.8rem + 1vw, 1.5rem);
 }
 
 .footer {
