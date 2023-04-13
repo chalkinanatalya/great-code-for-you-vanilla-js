@@ -79,10 +79,7 @@
   .greeting {
     background-size: auto 70%;
   }
-
 }
-
-@media (max-width: 920px) {}
 
 /* ---greeting---<> */
 
@@ -95,7 +92,18 @@
   }
 }
 
-@media (max-width: 920px) {}
+@media (max-width: 920px) {
+  .quality {
+    margin: 0 5px;
+  }
+
+  .quality-header,
+  h2 {
+    font-size: clamp(0.3rem, 0.3rem + 0.5vw, 1rem);
+  }
+}
+
+@media (max-width: 620px) {}
 
 /* ---qualities---<> */
 
