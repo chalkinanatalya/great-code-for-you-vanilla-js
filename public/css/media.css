@@ -72,9 +72,42 @@
 /* ---greeting---<> */
 @media (max-width: 1250px) {
   .greeting {
-    background-size: auto 70%;
+    background-size: auto 100%;
+    margin-left: 0em;
+    background-position: unset;
   }
 }
+@media (max-width: 1150px) {
+    .greeting {
+      background-size: auto 100%;
+    }
+    .text {
+        margin: auto;
+        margin-left: 5em;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .greeting {
+      background-size: auto 100%;
+    }
+    .text {
+        margin: auto;
+       
+    }
+  }
+
+  @media (max-width: 450px) {
+    .greeting {
+      background-size: auto 100%;
+    }
+    .text {
+        margin: auto;
+    }
+    .creative {
+        font-size: 40px;
+    }
+  }
 
 /* ---greeting---<> */
 
@@ -143,6 +176,9 @@
 }
 
 @media (max-width: 920px) {
+    .competencies {
+        margin: 1em 1em;
+    }
 }
 
 /* ---competencies---<> */
