@@ -5,23 +5,23 @@
     margin-bottom: 10em;
     background-color: #0e0e0e;
     border-bottom: 1px solid #2a2a2a;
-    font: 15px/1.7 'Plain', sans-serif;
+    font: 1.1em 'Plain', sans-serif;
     height: 728px;
 }
 
 .feedback-inner {
     display: flex;
     flex-direction: row;
-    max-width: 1200px;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    width: 100%;
-    margin: 0 auto;
+    margin: 0 3em;
+    gap: 3em;
 }
 
 .feedback-content {
     position: relative;
-    flex: 1 0 0;
-    padding: 6em 10em 3em 0;
+    flex: 3;
+    padding: 3em 3em 0 0;
     color: #8d8d8d;
     z-index: 6;
 }
@@ -42,8 +42,8 @@
 }
 
 .feedback-form {
-    padding: 3em;
-    border-radius: 2em;
+    padding: 2em;
+    border-radius: 1em;
     background-color: #fff;
 }
 
@@ -63,14 +63,14 @@
     border-radius: 1em;
     color: #fff;
     background-color: #0e0e0e;
-    margin-top: 2em;
+    margin-top: 1em;
     cursor: pointer;
 }
 
 .feedback-media {
-    position: relative;
-    flex: 1 0 0;
-    top: -7em;
+  position: relative;
+    flex: 2;
+    top: -105px;
     height: 839px;
 }
 
@@ -87,6 +87,7 @@
     top: -800px;
     left: 65px;
     z-index: 3;
+    width: 80%;
 }
 
 .phone-cat img {
@@ -107,7 +108,38 @@
 
 .feedback-bottom {
   position: relative;
-  top: -850px;
-  left: -50px;
+  top: -200px;
   z-index: 5;
+}
+
+.feedback-bottom img {
+  object-fit: contain;
+  width: 100%
+}
+
+
+@media screen and (max-width: 1280px) {
+  .feedback-inner {
+    display: block;
+  }
+  .feedback-media {
+    display: none;
+  }
+  .feedback-bottom {
+    top: -0px;
+  }
+  .feedback-content {
+    padding: 3em 0 0 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 600px) {
+
+}
+@media screen and (min-width: 480px) {
+
 }
