@@ -15,7 +15,7 @@
 #cursor {
     width: 8px;
     height: 8px;
-    background-color: rgba(#fff, .5);
+    background-color: rgba(215, 169, 252, 1);
     transform: scale(1);
 }
 
@@ -27,8 +27,8 @@
 #aura {
     width: 46px;
     height: 46px;
-    border: 1px solid rgba(#fff, .2);
-    background-color: rgba(#fff, .027);
+    border: 1px solid rgba(215, 169, 252, 1);
+    background-color: rgba(215, 169, 252, .2);
     transform: translate(5px, 5px);
 }
 
