@@ -88,3 +88,56 @@
   position: relative;
   width: 90%;
 }
+
+@media screen and (max-width: 1280px) {
+  .quality-inner {
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+
+  .design {
+    width: 40%;
+    top: 0;
+    position: relative;
+  }
+
+  .developing {
+    width: 40%;
+    position: relative;
+  }
+
+  .marketing {
+    margin-top: 3em;
+    max-width: 47%;
+    position: relative;
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .quality h2 {
+    font-size: 2.5em;
+  }
+
+  .design {
+    margin-top: 3em;
+    width: 100%;
+  }
+
+  .developing {
+    margin-top: 3em;
+    width: 100%;
+  }
+
+  .marketing {
+    margin-top: 3em;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+
+}
+@media screen and (min-width: 480px) {
+
+}

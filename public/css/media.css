@@ -105,65 +105,6 @@
 
 /* ---greeting---<> */
 
-/* ---qualities---<> */
-@media (max-width: 1250px) {
-  .quality-header,
-  h2 {
-    font-size: clamp(0.65rem, 0.4rem + 0.5vw, 1rem);
-  }
-}
-
-@media (max-width: 920px) {
-  .quality {
-    margin: 0 5px;
-  }
-
-  .quality-header,
-  h2 {
-    font-size: clamp(0.3rem, 0.3rem + 0.5vw, 1rem);
-  }
-}
-
-@media (max-width: 620px) {
-  .quality-inner {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-  }
-  .quality {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 90%;
-    transform: translateX(20px);
-  }
-  .quality-header,
-  h2 {
-    font-size: clamp(0.2rem, 0.2rem + 0.5vw, 1rem);
-  }
-  .quality-media,
-  .quality-header {
-    flex-wrap: nowrap;
-  }
-  .quality-media img {
-    display: none;
-  }
-}
-
-@media (max-width: 450px) {
-  .quality {
-    flex-direction: column;
-  }
-  .quality-header {
-    margin: 0 0 0 5%;
-  }
-  .quality-header,
-  h2 {
-    font-size: 0.8em;
-
-  }
-}
-
-/* ---qualities---<> */
 
 /* ---competencies---<> */
 @media (max-width: 1250px) {
@@ -182,51 +123,6 @@
         margin: 1em 1em;
     }
 }
-
-/* ---competencies---<> */
-
-/* ---developers---<> */
-/* ---developers---<> */
-
-/* ---calculator---<> */
-/* ---calculator---<> */
-
-/* ---feedback---<> */
-@media (max-width: 1250px) {
-  .feedback-inner {
-    display: block;
-  }
-
-  .feedback-content {
-    padding: 5%;
-  }
-
-  .feedback-media {
-    display: none;
-  }
-
-  .feedback-bottom {
-    display: none;
-  }
-
-  .feedback {
-    margin-bottom: 0.1em;
-  }
-}
-
-@media (max-width: 620px) {
-  .feedback-form {
-    padding: 35px;
-  }
-}
-
-@media (max-width: 450px) {
-  .feedback-form {
-    padding: 25px;
-  }
-}
-
-/* ---feedback---<> */
 
 /* ---footer---<> */
 @media (max-width: 450px) {
