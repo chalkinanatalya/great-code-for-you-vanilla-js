@@ -2,7 +2,7 @@
   padding: 3em 0;
   background-color: #0e0e0e;
   transition-property: background-color;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 2s, transform 0.5s;
   color: #000;
   font: 15px/1.7 'Plain', sans-serif;
 }
@@ -10,7 +10,7 @@
 .qualities.animation-class {
   background-color: white;
   transition-timing-function: ease-out;
-  transition: background-color 1.5s, transform 0.2s;
+  transition: background-color 2s, transform 0.5s;
 }
 
 .quality-inner {
@@ -21,15 +21,15 @@
 }
 
 .quality {
-    max-width: 1200px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 20%;
-    margin: 0 20px;
-    opacity: 0;
-    transform: translateY(20px);
+  max-width: 1200px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20%;
+  margin: 0 20px;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .quality.show {
@@ -39,14 +39,14 @@
 }
 
 .quality h2 {
-    margin-top: 0;
-    margin-bottom: .5em;
-    font-size: 3em;
-    font-weight: 300;
+  margin-top: 0;
+  margin-bottom: .5em;
+  font-size: 3em;
+  font-weight: 300;
 }
 
 .quality-content {
-  font-size: 1.1em;
+  font-size: 1.5em;
   background-color: #fff;
   margin: 10px;
   border-radius: 20px;
@@ -75,7 +75,8 @@
   background-color: #e7caff;
 }
 
-.quality-media, .quality-header {
+.quality-media,
+.quality-header {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
