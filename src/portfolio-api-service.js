@@ -40,5 +40,3 @@ export default class PortfolioApiService extends ApiService {
     return parsedResponse;
   };
 }
-
-//json-server src/mock/question.json --routes src/mock/routes.json || json-server src/mock/question.json

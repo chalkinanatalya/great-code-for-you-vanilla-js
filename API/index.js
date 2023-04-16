@@ -6,11 +6,12 @@ const path = require('path');
 const fs = require('fs');
 const Buffer = require('buffer').Buffer;
 const { MongoClient } = require('mongodb');
+require('dotenv').config();
 
 // Replace the uri string with your connection string.
-const mongoUrl = 'mongodb+srv://devnchalk:pXwKLltG2JYc8i7J@cluster0.gyek8dt.mongodb.net/test';
+const mongoUrl = `mongodb+srv://${process.env.DB_PROJECT}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}.mongodb.net/test`;
 const client = new MongoClient(mongoUrl);
-const database = client.db('greatcode');
+const database = client.db(`${process.env.DB_NAME}`);
 
 async function getData(url) {
   let data = [];
