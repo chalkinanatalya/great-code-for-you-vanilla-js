@@ -65,6 +65,11 @@
   overflow: hidden;
 }
 
+.cta-header-container h3 {
+  margin: auto;
+  padding: 10em 0;
+}
+
 .minute {
   display: flex;
   justify-content: center;
@@ -199,15 +204,4 @@
   .radiobutton {
     margin-left: 5%;
   }
-}
-
-@media screen and (min-width: 768px) {
-
-}
-
-@media screen and (min-width: 600px) {
-
-}
-@media screen and (min-width: 480px) {
-
 }

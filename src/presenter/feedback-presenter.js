@@ -1,10 +1,11 @@
-import { render, RenderPosition } from '../utils/render';
+import { remove, render, RenderPosition } from '../utils/render';
 import FeedbackView from '../view/feedback-view';
 
 export default class FeedbackPresenter {
   #mainContainer = null;
-  #feedbackComponent = new FeedbackView();
+  #feedbackComponent = null;
   #feedbackModel = null;
+  #sentStatus = '';
 
   constructor(mainContainer, feedbackModel) {
     this.#mainContainer = mainContainer;
@@ -16,8 +17,11 @@ export default class FeedbackPresenter {
   };
 
   #renderFeedback = () => {
+    this.#feedbackComponent = new FeedbackView(this.#sentStatus);
     render(this.#feedbackComponent, this.#mainContainer, RenderPosition.BEFOREEND);
-    this.#setButtonHandler();
+    if (this.#sentStatus !== 'sent') {
+      this.#setButtonHandler();
+    }
   };
 
   #setButtonHandler = () => {
@@ -28,6 +32,9 @@ export default class FeedbackPresenter {
         'phone': inputsArray.find((input) => input.id === 'field-phone').value,
       };
       this.#feedbackModel.sendFormAnswers();
+      this.#sentStatus = 'sent';
+      remove(this.#feedbackComponent);
+      this.init();
     });
   };
 }

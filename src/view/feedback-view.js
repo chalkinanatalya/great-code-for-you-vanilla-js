@@ -1,11 +1,13 @@
 import AbstractView from '../utils/view/abstract-view';
 
 const createFormFeedbackTemplate = () => (
-  `<input type="text" class="form-field" id="field-name" placeholder="Your name">
-  <input type="phone" class="form-field" id="field-phone" placeholder="Your phone">`
+  `<input type="text" class="form-field" id="field-name" placeholder="Your name" pattern="[A-Za-z]+" required>
+  <input type="text" class="form-field" id="field-phone" placeholder="Your phone" pattern="\\+[0-9]{1,4}\\([0-9]{1,5}\\)[0-9]{1,10}$" required>
+  <button class="form-button disabled">Submit</button>
+  <div class="feedback-err"></div>`
 );
 
-const createFeedbackViewTemplate = () => (
+const createFeedbackViewTemplate = (sentStatus) => (
   `<section class="container feedback">
     <div class="feedback-inner">
       <div class="feedback-content">
@@ -13,8 +15,7 @@ const createFeedbackViewTemplate = () => (
         <p class="animate__animated wow animate__bounceInLeft">We aim to create unique and personalized websites that accurately meet the needs and goals of each client. Contact us today to discuss your needs and receive a free consultation. We are confident that we can offer you the best solution for your business in the online world.
         Please leave your contact information below, and we will get back to you soon. Thank you for considering us!</p>
         <form action="#" class="feedback-form">
-            ${createFormFeedbackTemplate()}
-          <button class="form-button">Submit</button>
+        ${sentStatus !== 'sent' ? createFormFeedbackTemplate() : '<h3>Thank you! We will contact you as soon as possible</h3>'}
         </form>
       </div>
       <div class="feedback-media">
@@ -34,32 +35,46 @@ const createFeedbackViewTemplate = () => (
 );
 
 export default class FeedbackView extends AbstractView {
-  get template() {
-    return createFeedbackViewTemplate();
+  #sentStatus = '';
+
+  constructor (sentStatus) {
+    super();
+    this.#sentStatus = sentStatus;
   }
 
-  setDataLoadHandler = (callback) => {
-    this._callback.dataLoader = callback;
-    this.element.querySelectorAll('.form-field').forEach((input) => {
-      input.addEventListener('change', this.#inputLoaderHandler);
-    });
-  };
+  get template() {
+    return createFeedbackViewTemplate(this.#sentStatus);
+  }
 
   setSendButtonClickHandler = (callback) => {
     this._callback.buttonSendClick = callback;
     this.element.querySelector('.form-button').addEventListener('click', this.#buttonSendClickHandler);
   };
 
-  #inputLoaderHandler = (evt) => {
-    const button = document.querySelector('.form-button');
-    const inputs = document.querySelectorAll('.form-field');
-    evt.preventDefault();
-    this._callback.inputLoader(button, inputs, evt);
-  };
-
   #buttonSendClickHandler = (evt) => {
     const inputs = document.querySelectorAll('.form-field');
     evt.preventDefault();
-    this._callback.buttonSendClick(inputs, evt);
+
+    let hasErrors = false;
+    inputs.forEach((input) => {
+      if (!input.checkValidity()) {
+        hasErrors = true;
+        this.showValidationError(input);
+      }
+    });
+
+    if (!hasErrors) {
+      this._callback.buttonSendClick(inputs);
+    }
+  };
+
+  showValidationError = (input) => {
+    const errorEl = document.querySelector('.feedback-err');
+    if (input.id === 'field-phone') {
+      errorEl.textContent = 'Invalid phone number format';
+    }
+    if (input.id === 'field-name') {
+      errorEl.textContent = 'Invalid name format';
+    }
   };
 }
