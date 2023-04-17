@@ -154,3 +154,18 @@ width: 100%
     margin-right: 0em;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .feedback-inner {
+    margin: 0 3em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .form-field, .form-button {
+    padding: 0.5em;
+  }
+  .feedback-content h2 {
+    font-size: 2em;
+  }
+}
